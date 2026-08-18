@@ -1,11 +1,13 @@
-# This project compiles each top-level *.cpp into a Unix executable with the
-# same base name and no extension (not *.exe - that's a Windows PE suffix,
-# and these are Mach-O binaries from e.g. `g++ playground.cpp -o playground`).
-# So instead of listing every binary by name: ignore everything at the root,
-# then un-ignore anything that has an extension, plus directories.
-/*
-!/*.*
-!/*/
+# This project compiles *.cpp files (at root and under examples/) into Unix
+# executables with the same base name and no extension (not *.exe - that's a
+# Windows PE suffix, and these are Mach-O binaries from e.g.
+# `g++ examples/playground.cpp -o examples/playground`).
+# So instead of listing every binary by name: ignore everything, then
+# un-ignore anything that has an extension, plus directories. No leading
+# slash, so this applies at every directory depth, not just the root.
+*
+!*.*
+!*/
 
 test.cpp
 playground.cpp
