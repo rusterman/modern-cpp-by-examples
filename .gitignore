@@ -1,0 +1,35 @@
+# This project compiles each top-level *.cpp into a Unix executable with the
+# same base name and no extension (not *.exe - that's a Windows PE suffix,
+# and these are Mach-O binaries from e.g. `g++ playground.cpp -o playground`).
+# So instead of listing every binary by name: ignore everything at the root,
+# then un-ignore anything that has an extension, plus directories.
+/*
+!/*.*
+!/*/
+
+test.cpp
+playground.cpp
+tempCodeRunnerFile.cpp
+
+# ...then re-ignore specific dotted files/dirs that are still noise
+tempCodeRunnerFile.cpp
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Generic C/C++ build output, in case a build system gets added later
+*.o
+*.obj
+*.out
+*.exe
+*.dSYM/
+*.pch
+*.gch
+*.ilk
+*.pdb
+build/
+out/
+cmake-build-*/
