@@ -139,6 +139,21 @@ void downloadFile(function<void()> onFinished){
 
     This is why I recommend thinking: 
     Lambda = small object + operator()
+
+    Quick reference:
+    | Part            | Meaning                                           |
+    | --------------- | ------------------------------------------------- |
+    | `[x]`           | Capture `x` by value                              |
+    | `[&x]`          | Capture `x` by reference                          |
+    | `[=]`           | Capture used variables by value                   |
+    | `[&]`           | Capture used variables by reference               |
+    | `[this]`        | Capture current object                            |
+    | `()`            | Parameters                                        |
+    | `mutable`       | Allows modification of value-captured copies      |
+    | `noexcept`      | Promises the lambda won't let an exception escape |
+    | `-> int`        | Explicit return type                              |
+    | `[[nodiscard]]` | Warn if result is ignored                         |
+    | `{}`            | Lambda body                                       |
 */
 
 
